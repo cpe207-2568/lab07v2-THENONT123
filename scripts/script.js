@@ -30,17 +30,17 @@ lastNameInput.onkeyup = () => {
 emailInput.onkeyup = () => {
   emailInput.classList.remove("is-valid");
   emailInput.classList.remove("is-invalid");
-}
+};
 
 passwordInput.onkeyup = () => {
   passwordInput.classList.remove("is-valid");
   passwordInput.classList.remove("is-invalid");
-}
+};
 
 passwordConfirmInput.onkeyup = () => {
   passwordConfirmInput.classList.remove("is-valid");
   passwordConfirmInput.classList.remove("is-invalid");
-}
+};
 // add callback functions for other input events.
 
 // (lastname, email, password, confirm password)
@@ -59,7 +59,7 @@ submitBtn.onclick = () => {
 
   // validate last name
 
-    if (lastNameInput.value === "") {
+  if (lastNameInput.value === "") {
     lastNameInput.classList.add("is-invalid");
   } else {
     lastNameInput.classList.add("is-valid");
@@ -68,7 +68,7 @@ submitBtn.onclick = () => {
 
   // validate email
 
-    if (validateEmail(emailInput.value)===false) {
+  if (validateEmail(emailInput.value) === false) {
     emailInput.classList.add("is-invalid");
   } else {
     emailInput.classList.add("is-valid");
@@ -77,10 +77,9 @@ submitBtn.onclick = () => {
 
   // validate password
 
-    if (passwordInput.value === "") {
+  if (passwordInput.value === "") {
     passwordInput.classList.add("is-invalid");
-  } 
-    else if (passwordInput.value.length<6){
+  } else if (passwordInput.value.length < 6) {
     passwordInput.classList.add("is-invalid");
   } else {
     passwordInput.classList.add("is-valid");
@@ -89,21 +88,25 @@ submitBtn.onclick = () => {
 
   // validate confirm password
 
-    if (passwordConfirmInput.value.length < 6 || passwordConfirmInput.value !== passwordInput.value) {
+  if (
+    passwordConfirmInput.value.length < 6 ||
+    passwordConfirmInput.value !== passwordInput.value
+  ) {
     passwordConfirmInput.classList.add("is-invalid");
     isPasswordConfirmOk = false;
-  } 
-  else {
+  } else {
     passwordConfirmInput.classList.add("is-valid");
     isPasswordConfirmOk = true;
   }
 
-  if (isFirstNameOk 
-    &&isLastnameOk
-    &&isEmailOk
-    &&isPasswordOk
-    &&isPasswordConfirmOk
-  ) alert("Registered successfully");
+  if (
+    isFirstNameOk &&
+    isLastnameOk &&
+    isEmailOk &&
+    isPasswordOk &&
+    isPasswordConfirmOk
+  )
+    alert("Registered successfully");
 };
 
 // add callback function for Reset button.
@@ -133,4 +136,4 @@ resetBtn.onclick = () => {
   passwordConfirmInput.classList.remove("is-valid");
   passwordConfirmInput.classList.remove("is-invalid");
   isPasswordConfirmOk = false;
-}
+};
